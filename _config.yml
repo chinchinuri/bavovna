@@ -1,6 +1,6 @@
 remote_theme: pages-themes/cayman@v0.2.0
-  plugins:
+plugins:
   - jekyll-remote-theme
 
-title: Бавовняні новини
-description: Останні новини та оновлення
+title: "Бавовняні новини"
+description: "Останні новини та оновлення"
