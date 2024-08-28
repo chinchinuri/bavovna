@@ -1,11 +1,6 @@
 ---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
 layout: home
 ---
-
-# Останні новини
-
-{% for post in site.posts %}
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  <p>{{ post.date | date: "%d.%m.%Y" }}</p>
-  {{ post.excerpt }}
-{% endfor %}
