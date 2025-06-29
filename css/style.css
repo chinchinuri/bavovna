@@ -1,27 +1,11 @@
-/* --- ОСНОВНИЙ РОЗДІЛ ДЛЯ РЕДАГУВАННЯ ДИЗАЙНУ --- */
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --background-color: #f8f9fa;
-    --surface-color: #ffffff;
-    --text-color: #212529;
-    --heading-color: #000000;
-    --border-color: #dee2e6;
-    --font-family: 'Montserrat', sans-serif;
-    --base-font-size: 16px;
-    --border-radius: 8px;
-    --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-/* ... (Теми dark та sepia залишаються без змін) ... */
+/* ... (змінні :root та теми залишаються без змін) ... */
+:root{--primary-color:#007bff;--secondary-color:#6c757d;--background-color:#f8f9fa;--surface-color:#ffffff;--text-color:#212529;--heading-color:#000000;--border-color:#dee2e6;--font-family:'Montserrat',sans-serif;--base-font-size:16px;--border-radius:8px;--box-shadow:0 4px 8px rgba(0,0,0,0.1);}
 body.theme-dark{--primary-color:#1e90ff;--secondary-color:#adb5bd;--background-color:#121212;--surface-color:#1e1e1e;--text-color:#e0e0e0;--heading-color:#ffffff;--border-color:#444;--box-shadow:0 4px 8px rgba(0,0,0,0.4);}
 body.theme-sepia{--primary-color:#8B4513;--secondary-color:#704214;--background-color:#f4e8d5;--surface-color:#faf0e6;--text-color:#5b4636;--heading-color:#4a3728;--border-color:#dcd0ba;--box-shadow:0 4px 8px rgba(139,69,19,0.15);}
 
-/* --- Загальні стилі --- */
 body{font-family:var(--font-family);font-size:var(--base-font-size);background-color:var(--background-color);color:var(--text-color);margin:0;line-height:1.6;transition:background-color .3s,color .3s;}
 .container{max-width:800px;margin:0 auto;padding:0 20px;}
-
-/* --- Шапка та Навігація --- */
-header{background-color:var(--surface-color);padding:15px 0;border-bottom:1px solid var(--border-color);box-shadow:var(--box-shadow);}
+header{background-color:var(--surface-color);padding:15px 0;border-bottom:1px solid var(--border-color);box-shadow:var(--box-shadow);position:sticky;top:0;z-index:999;}
 header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
 .logo-link{text-decoration:none;}
 header h1{color:var(--heading-color);margin:0;font-size:1.8em;}
@@ -32,21 +16,23 @@ nav a:hover:after{width:100%;left:0;}
 nav a.active{color:var(--heading-color);}
 nav a.active:after{width:100%;left:0;background:var(--heading-color);}
 
-/* --- Основний контент --- */
 main{padding:40px 0;}
 .page-content{background-color:var(--surface-color);padding:20px 30px;border-radius:var(--border-radius);box-shadow:var(--box-shadow);}
 
-/* --- Хмара тегів --- */
-.tags-cloud-container{background-color:var(--surface-color);padding:15px 20px;border-radius:var(--border-radius);margin-bottom:40px;box-shadow:var(--box-shadow);}
-.tags-cloud-container h3{margin-top:0;margin-bottom:15px;color:var(--heading-color);}
+/* --- Панель інструментів --- */
+.toolbar{background-color:var(--surface-color);padding:20px;border-radius:var(--border-radius);margin-bottom:40px;box-shadow:var(--box-shadow);display:flex;flex-direction:column;gap:20px;}
+.search-container{width:100%;}
+#search-input{width:100%;padding:12px;font-size:1em;border:1px solid var(--border-color);border-radius:var(--border-radius);box-sizing:border-box;}
+#search-input:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 2px rgba(0,123,255,0.25);}
+.tags-cloud-container{margin:0;padding:0;box-shadow:none;background:none;}
 #tags-list{display:flex;flex-wrap:wrap;gap:10px;}
-.tag-link{display:inline-block;padding:5px 12px;background-color:var(--background-color);border:1px solid var(--border-color);border-radius:var(--border-radius);text-decoration:none;color:var(--secondary-color);font-size:0.9em;transition:all .2s;}
+.tag-link{display:inline-block;padding:5px 12px;background-color:var(--background-color);border:1px solid var(--border-color);border-radius:20px;text-decoration:none;color:var(--secondary-color);font-size:0.9em;transition:all .2s;}
 .tag-link:hover,.tag-link.active{background-color:var(--primary-color);color:#fff;border-color:var(--primary-color);}
-.tag-link.all-tags{background-color:var(--primary-color);color:#fff;border-color:var(--primary-color);}
+.tag-link.all-tags{font-weight:bold;}
 
-/* --- Картка новини --- */
-.news-article{background-color:var(--surface-color);border:1px solid var(--border-color);border-radius:var(--border-radius);margin-bottom:30px;padding:20px;box-shadow:var(--box-shadow);transition:background-color .3s,border-color .3s;}
-.news-article img{max-width:100%;height:auto;border-radius:var(--border-radius);margin-bottom:15px;}
+/* --- Картка новини та відео --- */
+.news-article{background-color:var(--surface-color);border:1px solid var(--border-color);border-radius:var(--border-radius);margin-bottom:30px;padding:20px;box-shadow:var(--box-shadow);transition:background-color .3s,border-color .3s;overflow:hidden;}
+.news-article img{max-width:100%;height:auto;border-radius:var(--border-radius);margin-bottom:15px;display:block;background-color:#eee;min-height:200px;}
 .news-article h2{color:var(--heading-color);margin-top:0;}
 .news-article .meta{font-size:0.9em;color:var(--secondary-color);margin-bottom:15px;}
 .news-article .tags-container{margin-bottom:15px;display:flex;flex-wrap:wrap;gap:8px;}
@@ -56,14 +42,22 @@ main{padding:40px 0;}
 .news-article .read-more{display:inline-block;background-color:var(--primary-color);color:#fff;padding:10px 15px;text-decoration:none;border-radius:var(--border-radius);transition:background-color .2s;text-align:center;border:none;cursor:pointer;font-size:1em;}
 .news-article .read-more:hover{opacity:0.9;}
 .news-article .share-button{background-color:var(--secondary-color);}
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;margin:15px 0;}
+.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+/* --- Пагінація --- */
+.pagination-controls{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:20px;}
+.pagination-controls button{background-color:var(--surface-color);color:var(--primary-color);border:1px solid var(--border-color);padding:8px 14px;cursor:pointer;border-radius:var(--border-radius);transition:all .2s;}
+.pagination-controls button:hover{background-color:var(--primary-color);color:#fff;}
+.pagination-controls button.active{background-color:var(--primary-color);color:#fff;font-weight:bold;}
+.pagination-controls button:disabled{background-color:var(--background-color);color:var(--secondary-color);cursor:not-allowed;}
+
+/* --- Анімація завантаження --- */
+.loader{border:5px solid var(--background-color);border-top:5px solid var(--primary-color);border-radius:50%;width:50px;height:50px;animation:spin 1s linear infinite;margin:40px auto;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 
 /* ... (Стилі для футера та модального вікна залишаються без змін) ... */
 footer{text-align:center;padding:20px 0;margin-top:40px;border-top:1px solid var(--border-color);color:var(--secondary-color);}
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);display:flex;justify-content:center;align-items:center;z-index:1000;}
 .modal-content{background-color:var(--surface-color);padding:20px 30px;border-radius:var(--border-radius);box-shadow:0 5px 15px rgba(0,0,0,.3);position:relative;width:90%;max-width:400px;text-align:center;}
 .modal-close{position:absolute;top:10px;right:15px;font-size:28px;font-weight:bold;color:var(--secondary-color);background:none;border:none;cursor:pointer;}
-.modal-content h3{color:var(--heading-color);margin-top:0;margin-bottom:20px;}
-.share-links-container{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;}
-.share-links-container a{display:inline-block;padding:12px;border-radius:50%;transition:transform .2s ease;background-color:var(--background-color);}
-.share-links-container a:hover{transform:scale(1.1);}
-.share-links-container img{width:32px;height:32px;vertical-align:middle;}
