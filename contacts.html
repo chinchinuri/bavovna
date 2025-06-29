@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мої Новини</title>
+    <title>Про нас - Мої Новини</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 
     <header>
         <div class="container">
-            <!-- НОВЕ: Логотип як посилання та головне меню -->
             <a href="index.html" class="logo-link"><h1>Мої Новини</h1></a>
             <nav id="main-nav">
                 <ul>
@@ -26,19 +25,10 @@
     </header>
 
     <main>
-        <div class="container">
-            <!-- НОВЕ: Хмара тегів -->
-            <div id="tags-cloud" class="tags-cloud-container">
-                <h3>Теги</h3>
-                <div id="tags-list">
-                    <!-- Теги будуть завантажені сюди -->
-                </div>
-            </div>
-
-            <div id="news-feed">
-                <!-- Новини будуть завантажені сюди -->
-                <p>Завантаження новин...</p>
-            </div>
+        <div class="container page-content">
+            <h2>Про наш проєкт</h2>
+            <p>Вітаємо на нашому новинному сайті! Ми прагнемо надавати найсвіжіші та найцікавіші новини зі світу науки, технологій та космосу.</p>
+            <p>Цей сайт створений як демонстраційний проєкт з використанням сучасних веб-технологій і опублікований на GitHub Pages.</p>
         </div>
     </main>
 
@@ -47,16 +37,7 @@
             <p>&copy; 2023 Мої Новини. Створено для GitHub Pages.</p>
         </div>
     </footer>
-    
-    <!-- Модальне вікно для поширення залишається без змін -->
-    <div id="share-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Поділитися новиною</h3>
-            <div id="share-links" class="share-links-container"></div>
-        </div>
-    </div>
-    
+
     <script src="js/main.js"></script>
 </body>
 </html>
