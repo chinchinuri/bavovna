@@ -13,7 +13,6 @@
 
     <header>
         <div class="container">
-            <!-- НОВЕ: Логотип як посилання та головне меню -->
             <a href="index.html" class="logo-link"><h1>Мої Новини</h1></a>
             <nav id="main-nav">
                 <ul>
@@ -27,17 +26,26 @@
 
     <main>
         <div class="container">
-            <!-- НОВЕ: Хмара тегів -->
-            <div id="tags-cloud" class="tags-cloud-container">
-                <h3>Теги</h3>
-                <div id="tags-list">
-                    <!-- Теги будуть завантажені сюди -->
+            <!-- НОВЕ: Панель інструментів з пошуком та тегами -->
+            <div class="toolbar">
+                <div id="search-container" class="search-container">
+                    <input type="search" id="search-input" placeholder="Пошук новин...">
+                </div>
+                <div id="tags-cloud" class="tags-cloud-container">
+                    <div id="tags-list">
+                        <!-- Теги будуть завантажені сюди -->
+                    </div>
                 </div>
             </div>
 
             <div id="news-feed">
                 <!-- Новини будуть завантажені сюди -->
-                <p>Завантаження новин...</p>
+                <div class="loader"></div> <!-- Анімація завантаження -->
+            </div>
+            
+            <!-- НОВЕ: Контейнер для пагінації -->
+            <div id="pagination-controls" class="pagination-controls">
+                <!-- Кнопки пагінації будуть тут -->
             </div>
         </div>
     </main>
@@ -48,7 +56,6 @@
         </div>
     </footer>
     
-    <!-- Модальне вікно для поширення залишається без змін -->
     <div id="share-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
