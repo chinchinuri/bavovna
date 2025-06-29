@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мої Новини</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Свіжі Новини</h1>
+            <div class="theme-switcher">
+                <p>Змінити тему:</p>
+                <button data-theme="light" class="active">Світла</button>
+                <button data-theme="dark">Темна</button>
+                <button data-theme="sepia">Сепія</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" id="news-feed">
+            <!-- Новини будуть завантажені сюди за допомогою JavaScript -->
+            <p>Завантаження новин...</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Мої Новини. Створено для GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- НОВЕ: Модальне вікно для поширення (сховане за замовчуванням) -->
+    <div id="share-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Поділитися новиною</h3>
+            <div id="share-links" class="share-links-container">
+                <!-- Посилання будуть згенеровані тут -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
